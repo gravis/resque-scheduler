@@ -8,6 +8,8 @@ module ResqueScheduler
 
       base.class_eval do
 
+        include Resque::Helpers
+
         helpers do
           def format_time(t)
             t.strftime("%Y-%m-%d %H:%M:%S")
