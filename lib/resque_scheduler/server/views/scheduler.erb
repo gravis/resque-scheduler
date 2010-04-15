@@ -14,6 +14,7 @@
     <th>Class</th>
     <th>Queue</th>
     <th>Arguments</th>
+    <th>Rails env(s)</th>
   </tr>
   <% Resque.schedule.each do |name, config| %>
     <tr>
@@ -29,6 +30,7 @@
       <td><%= h config['class'] %></td>
       <td><%= h config['queue'] || queue_from_class_name(config['class']) %></td>
       <td><%= h config['args'].inspect %></td>
+      <td><%= h config['rails_env'] %></td>
     </tr>
   <% end %>
 </table>
