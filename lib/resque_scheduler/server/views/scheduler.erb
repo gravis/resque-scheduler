@@ -16,7 +16,8 @@
     <th>Arguments</th>
     <th>Rails env(s)</th>
   </tr>
-  <% Resque.schedule.each do |name, config| %>
+  <% Resque.schedule.keys.sort.each do |name| %>
+    <% config = Resque.schedule[name] %>
     <tr>
       <td>
         <form action="<%= url "/schedule/requeue" %>" method="post">
